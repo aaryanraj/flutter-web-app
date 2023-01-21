@@ -28,28 +28,26 @@ class _TopBarContentsState extends State<TopBarContents> {
     return Container(
       color: Colors.white.withOpacity(widget.opacity),
       child: Padding(
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.fromLTRB(20, 15, 20, 10),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            Text(
+              'eBookStore',
+              style: TextStyle(
+                color: Color(0xFF077bd7),
+                fontSize: 26,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w900,
+                letterSpacing: 3,
+              ),
+              textAlign: TextAlign.start,
+            ),
             Expanded(
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  /* SizedBox(
-                    width: screenSize.width / 4,
-                  ),*/
-                  Text(
-                    'eBookStore',
-                    style: TextStyle(
-                      color: Color(0xFF077bd7),
-                      fontSize: 26,
-                      fontFamily: 'Raleway',
-                      fontWeight: FontWeight.w900,
-                      letterSpacing: 3,
-                    ),
-                  ),
-                  SizedBox(width: screenSize.width / 3),
+                  SizedBox(width: screenSize.width / 8),
                   InkWell(
                     onHover: (value) {
                       setState(() {
@@ -63,11 +61,12 @@ class _TopBarContentsState extends State<TopBarContents> {
                         Text(
                           'Home',
                           style: TextStyle(
-                              color: _isHovering[0]
-                                  ? Color(0xFF077bd7)
-                                  : Color(0xFF077bd7),
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16),
+                            color: _isHovering[0]
+                                ? Color(0xFF077bd7)
+                                : Color(0xFF077bd7),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
                         ),
                         SizedBox(height: 5),
                         Visibility(

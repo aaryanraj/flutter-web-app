@@ -38,28 +38,38 @@ class _HomePageState extends State<HomePage> {
         : 1;
 
     return Scaffold(
-      extendBodyBehindAppBar: true,
+      extendBodyBehindAppBar: false,
       appBar: PreferredSize(
         preferredSize: Size(screenSize.width, 70),
         child: TopBarContents(_opacity),
       ),
-      body: Column(
-        children: [
-          Stack(
-            children: [
-              Container(
-                child: SizedBox(
-                  height: screenSize.height * 0.65,
-                  width: screenSize.width,
-                  child: Image.asset(
-                    'assets/images/background.png',
-                    fit: BoxFit.cover,
-                  ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Stack(
+              children: [
+                Container(
+                  child: SizedBox(
+                      height: screenSize.height * 0.65,
+                      width: screenSize.width,
+                      child: Image(
+                        image: AssetImage('assets/images/background.jpg'),
+                        fit: BoxFit.cover,
+                      )),
                 ),
-              ),
-            ],
-          ),
-        ],
+                Column(
+                  children: [
+                    FloatingQuickAccessBar(screenSize: screenSize),
+                    FeaturedHeading(screenSize: screenSize),
+                    FeaturedTiles(screenSize: screenSize),
+                    MainHeading(screenSize: screenSize),
+                    MainCarousel(),
+                  ],
+                )
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

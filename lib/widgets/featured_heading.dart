@@ -13,31 +13,36 @@ class FeaturedHeading extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-        top: screenSize.height * 0.06,
+        top: screenSize.height * 0.04,
         left: screenSize.width / 15,
         right: screenSize.width / 15,
       ),
-      child:  Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-              Text(
-              'Featured',
+      child: Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Text(
+            'Featured',
+            style: TextStyle(
+              fontSize: 30,
+              fontFamily: 'Montserrat',
+              fontWeight: FontWeight.bold,
+              color: Colors.black87,
+            ),
+          ),
+          Expanded(
+            child: Text(
+              'Reading is overrated, Undrestanding matters!!!',
+              textAlign: TextAlign.end,
               style: TextStyle(
-                  fontSize: 36,
-                  fontFamily: 'Raleway',
-                  fontWeight: FontWeight.bold,
-                  color:Color(0xFF263b5e)
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w500,
+                color: Colors.grey,
               ),
             ),
-                Expanded(
-                  child: Text(
-                    'Clue of the wooden cottage',
-                    textAlign: TextAlign.end,
-                  ),
-                ),
-              ],
-            ),
+          ),
+        ],
+      ),
     );
   }
 }
