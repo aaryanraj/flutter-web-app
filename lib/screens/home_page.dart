@@ -38,12 +38,13 @@ class _HomePageState extends State<HomePage> {
         : 1;
 
     return Scaffold(
-      extendBodyBehindAppBar: false,
+      extendBodyBehindAppBar: true,
       appBar: PreferredSize(
         preferredSize: Size(screenSize.width, 70),
         child: TopBarContents(_opacity),
       ),
       body: SingleChildScrollView(
+        controller: _scrollController,
         child: Column(
           children: [
             Stack(
@@ -64,6 +65,8 @@ class _HomePageState extends State<HomePage> {
                     FeaturedTiles(screenSize: screenSize),
                     MainHeading(screenSize: screenSize),
                     MainCarousel(),
+                    SizedBox(height: screenSize.height / 10),
+                    BottomBar(),
                   ],
                 )
               ],
