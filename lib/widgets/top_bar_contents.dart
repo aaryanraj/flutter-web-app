@@ -95,7 +95,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          'About',
+                          'Books',
                           style: TextStyle(
                               color: _isHovering[0]
                                   ? Color(0xFF077bd7)
@@ -130,7 +130,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          'Books',
+                          'Search',
                           style: TextStyle(
                               color: _isHovering[0]
                                   ? Color(0xFF077bd7)
@@ -165,7 +165,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          'Search',
+                          'About',
                           style: TextStyle(
                               color: _isHovering[0]
                                   ? Color(0xFF077bd7)

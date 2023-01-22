@@ -39,10 +39,28 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: PreferredSize(
-        preferredSize: Size(screenSize.width, 70),
-        child: TopBarContents(_opacity),
-      ),
+      appBar: screenSize.width < 820
+          ? AppBar(
+              iconTheme: IconThemeData(color: Color(0xFF077bd7)),
+              centerTitle: true,
+              backgroundColor: Colors.white.withOpacity(_opacity),
+              elevation: 0,
+              title: Text(
+                'eBookStore',
+                style: TextStyle(
+                  color: Color(0xFF077bd7),
+                  fontSize: 26,
+                  fontFamily: 'Montserrat',
+                  fontWeight: FontWeight.w900,
+                  letterSpacing: 3,
+                ),
+              ),
+            )
+          : PreferredSize(
+              preferredSize: Size(screenSize.width, 70),
+              child: TopBarContents(_opacity),
+            ),
+      drawer: MenuDrawer(),
       body: SingleChildScrollView(
         controller: _scrollController,
         child: Column(

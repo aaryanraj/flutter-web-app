@@ -73,7 +73,7 @@ class BottomBar extends StatelessWidget {
           ),
           SizedBox(height: 20),
           Text(
-            'Copyright © 2021 | DBestech',
+            'Copyright © 2023 | eBookStore',
             style: TextStyle(
               color: Colors.white,
               fontSize: 14,
