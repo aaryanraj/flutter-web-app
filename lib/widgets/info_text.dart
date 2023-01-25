@@ -17,7 +17,7 @@ class InfoText extends StatelessWidget {
           '$type: ',
           style: TextStyle(
             color: Colors.white,
-            fontSize: 16,
+            fontSize: 14,
           ),
         ),
         Flexible(
@@ -25,7 +25,7 @@ class InfoText extends StatelessWidget {
             text,
             style: TextStyle(
               color: Colors.white,
-              fontSize: 16,
+              fontSize: 14,
             ),
           ),
         )

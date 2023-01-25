@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web/screens/sign_up/sign_up.dart';
 
 class TopBarContents extends StatefulWidget {
   final double opacity;

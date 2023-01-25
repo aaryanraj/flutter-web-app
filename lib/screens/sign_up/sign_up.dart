@@ -6,14 +6,15 @@ import 'package:flutter_web/widgets/floating_quick_access_bar.dart';
 import 'package:flutter_web/widgets/main_heading.dart';
 import 'package:flutter_web/widgets/menu_drawer.dart';
 import 'package:flutter_web/widgets/top_bar_contents.dart';
+import 'package:flutter_web/widgets/responsive.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
+class SignUp extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _SignUpState createState() => _SignUpState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _SignUpState extends State<SignUp> {
   final ScrollController _scrollController = ScrollController();
   double _scrollPosition = 0;
   double _opacity = 0;
@@ -39,7 +40,7 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: screenSize.width < 820
+      appBar: ResponsiveWidget.isSmallScreen(context)
           ? AppBar(
               iconTheme: IconThemeData(color: Color(0xFF077bd7)),
               centerTitle: true,
@@ -78,11 +79,6 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Column(
                   children: [
-                    FloatingQuickAccessBar(screenSize: screenSize),
-                    FeaturedHeading(screenSize: screenSize),
-                    FeaturedTiles(screenSize: screenSize),
-                    MainHeading(screenSize: screenSize),
-                    MainCarousel(),
                     SizedBox(height: screenSize.height / 10),
                     BottomBar(),
                   ],
