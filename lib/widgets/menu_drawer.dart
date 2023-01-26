@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web/screens/home_page/home_page.dart';
+import 'package:flutter_web/screens/sign_up/signUp.dart';
 
 class MenuDrawer extends StatelessWidget {
   const MenuDrawer({
@@ -17,7 +19,14 @@ class MenuDrawer extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomePage(),
+                    ),
+                  );
+                },
                 child: Text(
                   'Home',
                   style: TextStyle(color: Colors.white, fontSize: 22),
@@ -101,7 +110,14 @@ class MenuDrawer extends StatelessWidget {
                 ),
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SignUp(),
+                    ),
+                  );
+                },
                 child: Text(
                   'Sign Up',
                   style: TextStyle(color: Colors.white, fontSize: 22),

@@ -1,6 +1,5 @@
 import 'package:flutter_web/widgets/bottom_bar_column.dart';
 import 'package:flutter_web/widgets/info_text.dart';
-import 'package:flutter_web/widgets/responsive.dart';
 import 'package:flutter/material.dart';
 
 class BottomBar extends StatelessWidget {
