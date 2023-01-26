@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web/screens/home_page/home_page.dart';
+import 'package:flutter_web/screens/log_in/Login.dart';
+import 'package:flutter_web/screens/sign_up/signUp.dart';
 
 class TopBarContents extends StatefulWidget {
   final double opacity;
@@ -54,7 +57,14 @@ class _TopBarContentsState extends State<TopBarContents> {
                         value ? _isHovering[0] = true : _isHovering[0] = false;
                       });
                     },
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => HomePage(),
+                        ),
+                      );
+                    },
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -230,7 +240,14 @@ class _TopBarContentsState extends State<TopBarContents> {
                         value ? _isHovering[5] = true : _isHovering[5] = false;
                       });
                     },
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Login(),
+                        ),
+                      );
+                    },
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -266,7 +283,14 @@ class _TopBarContentsState extends State<TopBarContents> {
                         value ? _isHovering[6] = true : _isHovering[6] = false;
                       });
                     },
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SignUp(),
+                        ),
+                      );
+                    },
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [

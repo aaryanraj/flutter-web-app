@@ -70,7 +70,7 @@ class FeaturedTiles extends StatelessWidget {
           )
         : Padding(
             padding: EdgeInsets.only(
-              top: screenSize.height * 0.06,
+              top: screenSize.height * 0.05,
               left: screenSize.width / 15,
               right: screenSize.width / 15,
             ),
@@ -85,23 +85,22 @@ class FeaturedTiles extends StatelessWidget {
                         width: screenSize.width / 3.8,
                         child: Container(
                           decoration: BoxDecoration(
-                           borderRadius: BorderRadius.circular(20.0),
-                            image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage(
-                              assets[pageIndex],
-                             // fit: BoxFit.cover,
-                            ),
-                            ),
-                            boxShadow: [
-                              BoxShadow(
-                                offset: Offset(0, 10),
-                                blurRadius: 20,
-                                spreadRadius: 5,
-                                color:Colors.grey.withOpacity(0.3),
-                              )
-                            ]
-                          ),
+                              borderRadius: BorderRadius.circular(20.0),
+                              image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: AssetImage(
+                                  assets[pageIndex],
+                                  // fit: BoxFit.cover,
+                                ),
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  offset: Offset(0, 10),
+                                  blurRadius: 20,
+                                  spreadRadius: 5,
+                                  color: Colors.grey.withOpacity(0.3),
+                                )
+                              ]),
                         ),
                       ),
                       Padding(

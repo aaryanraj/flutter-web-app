@@ -1,6 +1,5 @@
 import 'package:flutter_web/widgets/bottom_bar_column.dart';
 import 'package:flutter_web/widgets/info_text.dart';
-import 'package:flutter_web/widgets/responsive.dart';
 import 'package:flutter/material.dart';
 
 class BottomBar extends StatelessWidget {
@@ -23,64 +22,120 @@ class BottomBar extends StatelessWidget {
       ),
       padding: EdgeInsets.all(30),
       //color: Colors.blueGrey[900],
-      child: Column(
-        children: [
-          Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              BottomBarColumn(
-                heading: 'ABOUT',
-                s1: 'Contact Us',
-                s2: 'About Us',
-                s3: 'Careers',
-              ),
-              BottomBarColumn(
-                heading: 'Help',
-                s1: 'FAQ',
-                s2: 'Download',
-                s3: 'Something',
-              ),
-              BottomBarColumn(
-                heading: 'SOCIAL',
-                s1: 'Youtube',
-                s2: 'Facebook',
-                s3: 'Twitter',
-              ),
-              Container(
-                color: Colors.white,
-                width: 2,
-                height: 150,
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  InfoText(
-                    type: 'Email',
-                    text: 'dylan@gmail.com',
+      child: MediaQuery.of(context).size.width < 820
+          ? Column(
+              children: [
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    BottomBarColumn(
+                      heading: 'ABOUT',
+                      s1: 'Contact Us',
+                      s2: 'About Us',
+                      s3: 'Careers',
+                    ),
+                    BottomBarColumn(
+                      heading: 'Help',
+                      s1: 'FAQ',
+                      s2: 'Download',
+                      s3: 'Something',
+                    ),
+                    BottomBarColumn(
+                      heading: 'SOCIAL',
+                      s1: 'Youtube',
+                      s2: 'Facebook',
+                      s3: 'Twitter',
+                    ),
+                  ],
+                ),
+                Divider(
+                  color: Colors.white,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    InfoText(
+                      type: 'Email',
+                      text: 'dylan@gmail.com',
+                    ),
+                    SizedBox(height: 5),
+                    InfoText(
+                      type: 'Address',
+                      text: '128, Trymore Road, Delft, MN - 56124',
+                    )
+                  ],
+                ),
+                Divider(
+                  color: Colors.white,
+                ),
+                Text(
+                  'Copyright © 2023 | eBookStore',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 14,
                   ),
-                  SizedBox(height: 5),
-                  InfoText(
-                    type: 'Address',
-                    text: '128, Trymore Road, Delft, MN - 56124',
-                  )
-                ],
-              ),
-            ],
-          ),
-          Divider(
-            color: Colors.white,
-          ),
-          SizedBox(height: 20),
-          Text(
-            'Copyright © 2023 | eBookStore',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 14,
+                ),
+              ],
+            )
+          : Column(
+              children: [
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    BottomBarColumn(
+                      heading: 'ABOUT',
+                      s1: 'Contact Us',
+                      s2: 'About Us',
+                      s3: 'Careers',
+                    ),
+                    BottomBarColumn(
+                      heading: 'Help',
+                      s1: 'FAQ',
+                      s2: 'Download',
+                      s3: 'Something',
+                    ),
+                    BottomBarColumn(
+                      heading: 'SOCIAL',
+                      s1: 'Youtube',
+                      s2: 'Facebook',
+                      s3: 'Twitter',
+                    ),
+                    Container(
+                      color: Colors.white,
+                      width: 2,
+                      height: 150,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        InfoText(
+                          type: 'Email',
+                          text: 'dylan@gmail.com',
+                        ),
+                        SizedBox(height: 5),
+                        InfoText(
+                          type: 'Address',
+                          text: '128, Trymore Road, Delft, MN - 56124',
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+                Divider(
+                  color: Colors.white,
+                ),
+                SizedBox(height: 20),
+                Text(
+                  'Copyright © 2023 | eBookStore',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 14,
+                  ),
+                ),
+              ],
             ),
-          ),
-        ],
-      ),
     );
   }
 }
