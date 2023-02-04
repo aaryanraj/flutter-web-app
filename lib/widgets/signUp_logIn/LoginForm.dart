@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web/routing/routes.dart';
 
 // Define a custom Form widget.
 class LogInForm extends StatefulWidget {
@@ -53,14 +54,7 @@ class LogInFormState extends State<LogInForm> {
                   foregroundColor: Color.fromARGB(255, 0, 0, 0),
                 ),
                 onPressed: () {
-                  // Validate returns true if the form is valid, or false otherwise.
-                  if (_formKey.currentState!.validate()) {
-                    // If the form is valid, display a snackbar. In the real world,
-                    // you'd often call a server or save the information in a database.
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Processing Data')),
-                    );
-                  }
+                  Navigator.of(context).pushNamed(RoutesName.home);
                 },
                 child: const Text('Cancel'),
               ),

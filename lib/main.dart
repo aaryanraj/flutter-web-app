@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'screens/home_page/home_page.dart';
+import 'package:flutter_web/screens/home_page.dart';
+import 'package:flutter_web/routing/route_generator.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +15,8 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      initialRoute: '/home',
+      onGenerateRoute: RouteGenerator.generateRoute,
     );
   }
 }

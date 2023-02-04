@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web/widgets/bottom_bar.dart';
-
-import 'package:flutter_web/widgets/signUp_logIn/SignUpForm.dart';
+import 'package:flutter_web/screens/signUp.dart';
 import 'package:flutter_web/widgets/responsive.dart';
-import 'Package:flutter_web/screens/log_in/Login.dart';
+import 'package:flutter_web/widgets/signUp_logIn/LoginForm.dart';
+import 'package:flutter_web/widgets/bottom_bar.dart';
+import 'package:flutter_web/routing/routes.dart';
 
-class SignUp extends StatelessWidget {
+class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
@@ -34,16 +34,26 @@ class SignUp extends StatelessWidget {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text(
-                      'eBookStore',
-                      style: TextStyle(
-                        color: Color(0xFF077bd7),
-                        fontSize: 26,
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.w900,
-                        letterSpacing: 3,
+                    InkWell(
+                      hoverColor: Colors.transparent,
+                      onTap: () {
+                        Navigator.of(context).pushNamed(RoutesName.home);
+                      },
+                      child: Column(
+                        children: [
+                          Text(
+                            'eBookStore',
+                            style: TextStyle(
+                              color: Color(0xFF077bd7),
+                              fontSize: 26,
+                              fontFamily: 'Montserrat',
+                              fontWeight: FontWeight.w900,
+                              letterSpacing: 3,
+                            ),
+                            textAlign: TextAlign.start,
+                          ),
+                        ],
                       ),
-                      textAlign: TextAlign.start,
                     ),
                   ],
                 ),
@@ -73,28 +83,28 @@ class SignUp extends StatelessWidget {
                     children: <Widget>[
                       Container(
                         width: screenSize.width / 3.3,
-                        height: screenSize.height / 1.2,
+                        height: screenSize.height / 1.6,
                         color: Color(0xFF077bd7),
                         child: Padding(
-                          padding:
-                              EdgeInsets.only(top: 50, right: 20, left: 20),
+                          padding: EdgeInsets.fromLTRB(20, 30, 20, 30),
                           child: Align(
-                            alignment: Alignment.topCenter,
+                            alignment: Alignment.centerRight,
                             child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
-                                SizedBox(
-                                  height: 60.0,
-                                ),
                                 Container(
                                   padding:
                                       EdgeInsets.only(top: 5.0, bottom: 5.0),
-                                  child: Text("Let's setup your account",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 30.0,
-                                        fontWeight: FontWeight.w900,
-                                      ),
-                                      textAlign: TextAlign.center),
+                                  child: Text(
+                                    "Go ahead and Login",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 30.0,
+                                      fontWeight: FontWeight.w900,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
                                 ),
                                 SizedBox(
                                   height: 5.0,
@@ -103,7 +113,7 @@ class SignUp extends StatelessWidget {
                                   padding:
                                       EdgeInsets.only(top: 5.0, bottom: 5.0),
                                   child: Text(
-                                    "It should only take a couple of minutes to create your account",
+                                    "It should only take a couple of seconds to login to your account",
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 18.0,
@@ -118,7 +128,7 @@ class SignUp extends StatelessWidget {
                                   padding:
                                       EdgeInsets.only(top: 5.0, bottom: 5.0),
                                   child: Text(
-                                    "Already have an account?",
+                                    "Don't have an account?",
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 15.0,
@@ -129,13 +139,11 @@ class SignUp extends StatelessWidget {
                                 MaterialButton(
                                   color: Colors.lightBlue,
                                   onPressed: () {
-                                    Navigator.push(context,
-                                        MaterialPageRoute(builder: (context) {
-                                      return new Login();
-                                    }));
+                                    Navigator.of(context)
+                                        .pushNamed(RoutesName.signup);
                                   },
                                   child: Text(
-                                    "Login",
+                                    "Create Account",
                                     style: TextStyle(color: Colors.white),
                                   ),
                                 ),
@@ -146,20 +154,21 @@ class SignUp extends StatelessWidget {
                       ),
                       Container(
                         width: screenSize.width / 2.2,
-                        height: screenSize.height / 1.2,
-                        padding: EdgeInsets.only(top: 20, right: 20, left: 40),
+                        height: screenSize.height / 1.6,
+                        padding: EdgeInsets.fromLTRB(40, 20, 40, 20),
                         child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
                             Text(
-                              "Sign Up",
+                              "Log In",
                               style: TextStyle(
                                   color: Colors.lightBlue,
                                   fontWeight: FontWeight.w600,
                                   fontSize: 35.0,
                                   fontFamily: 'Merriweather'),
                             ),
-                            const SizedBox(height: 20),
-                            SignUpForm(),
+                            LogInForm()
                           ],
                         ),
                       ),

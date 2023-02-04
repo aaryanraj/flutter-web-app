@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web/screens/home_page/home_page.dart';
-import 'package:flutter_web/screens/sign_up/signUp.dart';
+import 'package:flutter_web/screens/home_page.dart';
+import 'package:flutter_web/screens/signUp.dart';
 
 class MenuDrawer extends StatelessWidget {
   const MenuDrawer({

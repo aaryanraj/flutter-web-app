@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web/screens/home_page/home_page.dart';
-import 'package:flutter_web/screens/log_in/Login.dart';
-import 'package:flutter_web/screens/sign_up/signUp.dart';
+import 'package:flutter_web/screens/home_page.dart';
+import 'package:flutter_web/routing/routes.dart';
+import 'package:flutter_web/screens/signUp.dart';
 
 class TopBarContents extends StatefulWidget {
   final double opacity;
@@ -35,16 +35,25 @@ class _TopBarContentsState extends State<TopBarContents> {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
-              'eBookStore',
-              style: TextStyle(
-                color: Color(0xFF077bd7),
-                fontSize: 26,
-                fontFamily: 'Montserrat',
-                fontWeight: FontWeight.w900,
-                letterSpacing: 3,
+            InkWell(
+              onTap: () {
+                Navigator.of(context).pushNamed(RoutesName.home);
+              },
+              child: Column(
+                children: [
+                  Text(
+                    'eBookStore',
+                    style: TextStyle(
+                      color: Color(0xFF077bd7),
+                      fontSize: 26,
+                      fontFamily: 'Montserrat',
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: 3,
+                    ),
+                    textAlign: TextAlign.start,
+                  ),
+                ],
               ),
-              textAlign: TextAlign.start,
             ),
             Expanded(
               child: Row(
@@ -58,12 +67,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                       });
                     },
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => HomePage(),
-                        ),
-                      );
+                      Navigator.of(context).pushNamed(RoutesName.home);
                     },
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -100,7 +104,9 @@ class _TopBarContentsState extends State<TopBarContents> {
                         value ? _isHovering[1] = true : _isHovering[1] = false;
                       });
                     },
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).pushNamed(RoutesName.books);
+                    },
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -135,7 +141,9 @@ class _TopBarContentsState extends State<TopBarContents> {
                         value ? _isHovering[2] = true : _isHovering[2] = false;
                       });
                     },
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).pushNamed(RoutesName.search);
+                    },
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -170,7 +178,9 @@ class _TopBarContentsState extends State<TopBarContents> {
                         value ? _isHovering[3] = true : _isHovering[3] = false;
                       });
                     },
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).pushNamed(RoutesName.about);
+                    },
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -205,7 +215,9 @@ class _TopBarContentsState extends State<TopBarContents> {
                         value ? _isHovering[4] = true : _isHovering[4] = false;
                       });
                     },
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).pushNamed(RoutesName.contact);
+                    },
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -241,18 +253,13 @@ class _TopBarContentsState extends State<TopBarContents> {
                       });
                     },
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Login(),
-                        ),
-                      );
+                      Navigator.of(context).pushNamed(RoutesName.login);
                     },
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          'Sign In',
+                          'Log In',
                           style: TextStyle(
                               color: _isHovering[0]
                                   ? Color(0xFF077bd7)
@@ -284,12 +291,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                       });
                     },
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => SignUp(),
-                        ),
-                      );
+                      Navigator.of(context).pushNamed(RoutesName.signup);
                     },
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
